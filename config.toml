@@ -1,4 +1,4 @@
-baseURL = "blog.github.io/blog/"
+baseURL = "mattische.github.io/blog/"
 languageCode = "en-us"
 title = "mattische/blog"
 theme = "paperback"
