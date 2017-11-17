@@ -1,0 +1,6 @@
+baseURL = "blog.github.io/blog/"
+languageCode = "en-us"
+title = "mattische/blog"
+theme = "paperback"
+
+publishDir = "docs"
