@@ -55,12 +55,14 @@
 <h2 id="konfiguration">Konfiguration:</h2>
 
 <p>På bägge maskinerna krävs en SSH-server (ssh-deamon).
-Lägg till 2 attribut sist i sshd_config:
-<code>$ sudo nano /etc/ssh/sshd_config</code></p>
+Lägg till 2 attribut sist i sshd_config:</p>
+
+<p><code>$ sudo nano /etc/ssh/sshd_config</code></p>
 
 <pre><code class="bash">
 GatewayPorts yes 
 ClientAliveInterval 60
+
 </code></pre>
 
 <p><code>GatewayPorts</code> - för att man ska kunna tunnla.
@@ -68,14 +70,17 @@ ClientAliveInterval 60
 där värdet 60 anger interval i sekunder som dummy-paket skickas för att upprätthålla kopplingen.</p>
 
 <p>Man kan dessutom lägga till motsvarande i SSH klienten för att upprätthålla kopplingen till en server.
-Följande gäller för alla användare:
-<code>$ sudo nano /etc/ssh/ssh_config</code></p>
+Följande gäller för alla användare:</p>
 
-<p>Följande gäller endast för berörd användare:
-<code>$ sudo nano ~/.ssh/config</code></p>
+<p><code>$ sudo nano /etc/ssh/ssh_config</code></p>
 
-<p>lägg till följande:
-<code>ServerAliveInterval 60</code></p>
+<p>Följande gäller endast för berörd användare:</p>
+
+<p><code>$ sudo nano ~/.ssh/config</code></p>
+
+<p>lägg till följande:</p>
+
+<p><code>ServerAliveInterval 60</code></p>
 
 <p>Logga in på den maskin som du inte kommer åt och skapa en reverse tunnel till den åtkomliga maskinen.
 På detta sätt kan du komma åt den oåtkomliga maskinen via den åtkomliga.</p>
@@ -96,8 +101,9 @@ Logga in på 194.47.151.45 och kör:</p>
 22 på 194.47.151.45, dvs SSH.
 localhost är alltså ur serverns (91.123.200.138) perspektiv, inte 194.47.151.45</p>
 
-<p>På en annan maskin kan du nu:
-<kbd>$ ssh user@91.123.200.138 -p2222</kbd></p>
+<p>På en annan maskin kan du nu:</p>
+
+<p><kbd>$ ssh user@91.123.200.138 -p2222</kbd></p>
 
 <p>och du ansluts alltså till 194.47.151.45.
 (tänk på att user ovan ska vara en user på 194.47.151.45)</p>
@@ -110,8 +116,9 @@ Du har åtkomst till en server 91.123.200.138.</p>
 <p>Problemet kanske är att vissa portar är spärrade på din maskin. Eller så vill du kanske bara förenkla saker.
 Du kanske har en databas som du vill komma åt via en annan maskin.</p>
 
-<p>Scenario 1 - du vill komma åt den spärrade siten imgur.com:
-<code>$ ssh -nNT -L 8080:imgur.com:80 user@91.123.200.138</code></p>
+<p>Scenario 1 - du vill komma åt den spärrade siten imgur.com:</p>
+
+<p><code>$ ssh -nNT -L 8080:imgur.com:80 user@91.123.200.138</code></p>
 
 <p>i en webbläsare: <a href="http://localhost:8080">http://localhost:8080</a>
 -L talar om att vi gör en lokal tunnel (local port forwarding)
@@ -121,8 +128,9 @@ Vår lokala port 8080 på localhost, tunnlas till imgur.com och port 80.</p>
 
 <p><code>$ ssh -nNT -L 9999:localhost:3306 user@91.123.200.138</code></p>
 
-<p>Vi kör alltså kommandot på maskinen där databasen finns - den maskinens lokala port 3306 är nu åtkomlig via servern (91.123.200.138) på port 9999.
-<code>$ mysql -h 91.123.200.138 -u databaseUser -p databasePass &ndash;port 9999</code></p>
+<p>Vi kör alltså kommandot på maskinen där databasen finns - den maskinens lokala port 3306 är nu åtkomlig via servern (91.123.200.138) på port 9999.</p>
+
+<p><code>$ mysql -h 91.123.200.138 -u databaseUser -p databasePass &ndash;port 9999</code></p>
 
 <p>Övrigt
 För att begränsa ssh-åtkomst till vissa användare på en maskin, lägg till tillåtna användare i /etc/ssh/sshd_config:

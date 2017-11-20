@@ -19,11 +19,13 @@ SSH deamon (sshd) och SSH klient på alla maskinerna.
 ## Konfiguration:
 På bägge maskinerna krävs en SSH-server (ssh-deamon).
 Lägg till 2 attribut sist i sshd_config:
+
 <code>$ sudo nano /etc/ssh/sshd_config</code>
 
 <pre><code class="bash">
 GatewayPorts yes 
 ClientAliveInterval 60
+
 </code></pre>
 
 <code>GatewayPorts</code> - för att man ska kunna tunnla.
@@ -33,12 +35,15 @@ där värdet 60 anger interval i sekunder som dummy-paket skickas för att uppr�
 
 Man kan dessutom lägga till motsvarande i SSH klienten för att upprätthålla kopplingen till en server.
 Följande gäller för alla användare:
+
 <code>$ sudo nano /etc/ssh/ssh_config</code>
 
 Följande gäller endast för berörd användare:
+
 <code>$ sudo nano ~/.ssh/config</code>
 
 lägg till följande:
+
 <code>ServerAliveInterval 60</code>
 
 
@@ -62,6 +67,7 @@ Logga in på 194.47.151.45 och kör:
 localhost är alltså ur serverns (91.123.200.138) perspektiv, inte 194.47.151.45
 
 På en annan maskin kan du nu:
+
 <kbd>$ ssh user@91.123.200.138 -p2222</kbd>
 
 och du ansluts alltså till 194.47.151.45.
@@ -77,6 +83,7 @@ Problemet kanske är att vissa portar är spärrade på din maskin. Eller så vi
 Du kanske har en databas som du vill komma åt via en annan maskin.
 
 Scenario 1 - du vill komma åt den spärrade siten imgur.com:
+
 <code>$ ssh -nNT -L 8080:imgur.com:80 user@91.123.200.138</code>
 
 i en webbläsare: http://localhost:8080
@@ -88,6 +95,7 @@ Scenario 2 - exponera vår lokala databas (med shell-access eller för att kunna
 <code>$ ssh -nNT -L 9999:localhost:3306 user@91.123.200.138</code>
 
 Vi kör alltså kommandot på maskinen där databasen finns - den maskinens lokala port 3306 är nu åtkomlig via servern (91.123.200.138) på port 9999.
+
 <code>$ mysql -h 91.123.200.138 -u databaseUser -p databasePass --port 9999</code>
 
 

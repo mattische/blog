@@ -20,7 +20,8 @@
       <description>Sorry, this is in swedish only Reverse SSH tunneling /Remote port forwarding Problem: du kan inte komma åt en dator utifrån (den befinner sig förmodligen bakom ett NAT (Network Address Translator).
 Lösning: skapa en ssh tunnel FRÅN oåtkomlig maskin via en åtkomlig maskin.
 Krävs: SSH deamon (sshd) och SSH klient på alla maskinerna.
-Konfiguration: På bägge maskinerna krävs en SSH-server (ssh-deamon). Lägg till 2 attribut sist i sshd_config: $ sudo nano /etc/ssh/sshd_config</description>
+Konfiguration: På bägge maskinerna krävs en SSH-server (ssh-deamon). Lägg till 2 attribut sist i sshd_config:
+$ sudo nano /etc/ssh/sshd_config</description>
     </item>
     
     <item>
