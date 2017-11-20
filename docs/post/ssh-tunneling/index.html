@@ -116,7 +116,7 @@ Du har åtkomst till en server 91.123.200.138.</p>
 <p>Problemet kanske är att vissa portar är spärrade på din maskin. Eller så vill du kanske bara förenkla saker.
 Du kanske har en databas som du vill komma åt via en annan maskin.</p>
 
-<h3 id="scenario-1-du-vill-komma-åt-den-spärrade-siten-imgur-com">Scenario 1 - du vill komma åt den spärrade siten imgur.com:</h3>
+<p><b> Scenario 1 - du vill komma åt den spärrade siten imgur.com:</b></p>
 
 <p><code>$ ssh -nNT -L 8080:imgur.com:80 user@91.123.200.138</code></p>
 
@@ -124,7 +124,7 @@ Du kanske har en databas som du vill komma åt via en annan maskin.</p>
 -L talar om att vi gör en lokal tunnel (local port forwarding)
 Vår lokala port 8080 på localhost, tunnlas till imgur.com och port 80.</p>
 
-<h3 id="scenario-2-exponera-vår-lokala-databas-med-shell-access-eller-för-att-kunna-ansluta-via-en-app-vi-har-t-ex-mysql-server-lokalt-som-då-har-port-3306">Scenario 2 - exponera vår lokala databas (med shell-access eller för att kunna ansluta via en app). Vi har t ex mysql-server lokalt som då har port 3306.</h3>
+<p><b> Scenario 2 - exponera vår lokala databas (med shell-access eller för att kunna ansluta via en app). Vi har t ex mysql-server lokalt som då har port 3306.</b></p>
 
 <p><code>$ ssh -nNT -L 9999:localhost:3306 user@91.123.200.138</code></p>
 
