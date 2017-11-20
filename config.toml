@@ -4,3 +4,23 @@ title = "mattische/blog"
 theme = "paperback"
 
 publishDir = "docs"
+
+[params]
+
+# your name to display by the copyright sign
+# default: undefined
+AuthorName = "mattissche"
+
+# tagline to show beneath homepage h1
+# default: undefined
+Tagline = "Hello, world!"
+
+# number of posts to show on index
+# default: 10
+HomepagePosts = 5
+
+# default: undefined
+GithubUsername = "mattische"
+
+# default: undefined
+TwitterUsername = "mattische"
