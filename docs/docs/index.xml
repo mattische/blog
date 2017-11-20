@@ -6,10 +6,19 @@
     <description>Recent content in Docs on mattische/blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Nov 2017 11:35:04 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 20 Nov 2017 11:43:06 +0100</lastBuildDate>
     
 	<atom:link href="https://mattische.github.io/blog/docs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>First Post</title>
+      <link>https://mattische.github.io/blog/docs/posts/first-post/</link>
+      <pubDate>Mon, 20 Nov 2017 11:43:06 +0100</pubDate>
+      
+      <guid>https://mattische.github.io/blog/docs/posts/first-post/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Test</title>
