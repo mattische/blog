@@ -38,7 +38,7 @@
 
 <pre>Sorry, this is in swedish only</pre>
 
-<h1 id="reverse-ssh-tunneling-remote-port-forwarding">Reverse SSH tunneling /Remote port forwarding</h1>
+<h1 id="reverse-ssh-tunneling-remote-port-forwarding">Reverse SSH tunneling / Remote port forwarding</h1>
 
 <h2 id="problem">Problem:</h2>
 
@@ -99,7 +99,7 @@ Logga in på 194.47.151.45 och kör:</p>
 -R skapar en reverse tunnel
 2222 är porten på 91.123.200.138 som tunnlas till port:
 22 på 194.47.151.45, dvs SSH.
-localhost är alltså ur serverns (91.123.200.138) perspektiv, inte 194.47.151.45</p>
+localhost är alltså ur serverns (91.123.200.138) perspektiv.</p>
 
 <p>På en annan maskin kan du nu:</p>
 
@@ -108,7 +108,7 @@ localhost är alltså ur serverns (91.123.200.138) perspektiv, inte 194.47.151.4
 <p>och du ansluts alltså till 194.47.151.45.
 (tänk på att user ovan ska vara en user på 194.47.151.45)</p>
 
-<p>Local SSH tunneling / Local port forwarding</p>
+<h2 id="local-ssh-tunneling-local-port-forwarding">Local SSH tunneling / Local port forwarding</h2>
 
 <p>Konfigurera SSH-server och klient enligt ovan.
 Du har åtkomst till en server 91.123.200.138.</p>
@@ -116,7 +116,7 @@ Du har åtkomst till en server 91.123.200.138.</p>
 <p>Problemet kanske är att vissa portar är spärrade på din maskin. Eller så vill du kanske bara förenkla saker.
 Du kanske har en databas som du vill komma åt via en annan maskin.</p>
 
-<p>Scenario 1 - du vill komma åt den spärrade siten imgur.com:</p>
+<h3 id="scenario-1-du-vill-komma-åt-den-spärrade-siten-imgur-com">Scenario 1 - du vill komma åt den spärrade siten imgur.com:</h3>
 
 <p><code>$ ssh -nNT -L 8080:imgur.com:80 user@91.123.200.138</code></p>
 
@@ -124,7 +124,7 @@ Du kanske har en databas som du vill komma åt via en annan maskin.</p>
 -L talar om att vi gör en lokal tunnel (local port forwarding)
 Vår lokala port 8080 på localhost, tunnlas till imgur.com och port 80.</p>
 
-<p>Scenario 2 - exponera vår lokala databas (med shell-access eller för att kunna ansluta via en app). Vi har t ex mysql-server lokalt som då har port 3306.</p>
+<h3 id="scenario-2-exponera-vår-lokala-databas-med-shell-access-eller-för-att-kunna-ansluta-via-en-app-vi-har-t-ex-mysql-server-lokalt-som-då-har-port-3306">Scenario 2 - exponera vår lokala databas (med shell-access eller för att kunna ansluta via en app). Vi har t ex mysql-server lokalt som då har port 3306.</h3>
 
 <p><code>$ ssh -nNT -L 9999:localhost:3306 user@91.123.200.138</code></p>
 
@@ -132,9 +132,11 @@ Vår lokala port 8080 på localhost, tunnlas till imgur.com och port 80.</p>
 
 <p><code>$ mysql -h 91.123.200.138 -u databaseUser -p databasePass &ndash;port 9999</code></p>
 
-<p>Övrigt
-För att begränsa ssh-åtkomst till vissa användare på en maskin, lägg till tillåtna användare i /etc/ssh/sshd_config:
-<code>
+<h2 id="övrigt">Övrigt</h2>
+
+<p>För att begränsa ssh-åtkomst till vissa användare på en maskin, lägg till tillåtna användare i /etc/ssh/sshd_config:</p>
+
+<p><code>
 #Only accept connections from specified users
 AllowUsers user1 user2 user3
 </code></p>

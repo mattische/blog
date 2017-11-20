@@ -5,7 +5,7 @@ date: 2017-11-20T13:57:59+01:00
 
 <pre>Sorry, this is in swedish only</pre>
 
-# Reverse SSH tunneling /Remote port forwarding
+# Reverse SSH tunneling / Remote port forwarding
 
 ## Problem:
 du kan inte komma åt en dator utifrån (den befinner sig förmodligen bakom ett NAT (Network Address Translator).
@@ -64,7 +64,8 @@ Logga in på 194.47.151.45 och kör:
 -R skapar en reverse tunnel
 2222 är porten på 91.123.200.138 som tunnlas till port:
 22 på 194.47.151.45, dvs SSH.
-localhost är alltså ur serverns (91.123.200.138) perspektiv, inte 194.47.151.45
+localhost är alltså ur serverns (91.123.200.138) perspektiv.
+
 
 På en annan maskin kan du nu:
 
@@ -74,7 +75,7 @@ och du ansluts alltså till 194.47.151.45.
 (tänk på att user ovan ska vara en user på 194.47.151.45)
 
 
-Local SSH tunneling / Local port forwarding
+## Local SSH tunneling / Local port forwarding
 
 Konfigurera SSH-server och klient enligt ovan.
 Du har åtkomst till en server 91.123.200.138.
@@ -82,7 +83,7 @@ Du har åtkomst till en server 91.123.200.138.
 Problemet kanske är att vissa portar är spärrade på din maskin. Eller så vill du kanske bara förenkla saker.
 Du kanske har en databas som du vill komma åt via en annan maskin.
 
-Scenario 1 - du vill komma åt den spärrade siten imgur.com:
+### Scenario 1 - du vill komma åt den spärrade siten imgur.com:
 
 <code>$ ssh -nNT -L 8080:imgur.com:80 user@91.123.200.138</code>
 
@@ -90,17 +91,21 @@ i en webbläsare: http://localhost:8080
 -L talar om att vi gör en lokal tunnel (local port forwarding)
 Vår lokala port 8080 på localhost, tunnlas till imgur.com och port 80.
 
-Scenario 2 - exponera vår lokala databas (med shell-access eller för att kunna ansluta via en app). Vi har t ex mysql-server lokalt som då har port 3306.
+### Scenario 2 - exponera vår lokala databas (med shell-access eller för att kunna ansluta via en app). Vi har t ex mysql-server lokalt som då har port 3306.
+
 
 <code>$ ssh -nNT -L 9999:localhost:3306 user@91.123.200.138</code>
 
 Vi kör alltså kommandot på maskinen där databasen finns - den maskinens lokala port 3306 är nu åtkomlig via servern (91.123.200.138) på port 9999.
 
+
 <code>$ mysql -h 91.123.200.138 -u databaseUser -p databasePass --port 9999</code>
 
 
-Övrigt
+## Övrigt
 För att begränsa ssh-åtkomst till vissa användare på en maskin, lägg till tillåtna användare i /etc/ssh/sshd_config:
+
+
 <code>
 #Only accept connections from specified users
 AllowUsers user1 user2 user3
