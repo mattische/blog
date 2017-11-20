@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mattische/blog</title>
-    <link>https://mattische.github.io/blog/</link>
-    <description>Recent content on mattische/blog</description>
+    <title>Posts on mattische/blog</title>
+    <link>https://mattische.github.io/blog/post/</link>
+    <description>Recent content in Posts on mattische/blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 20 Nov 2017 13:16:26 +0100</lastBuildDate>
     
-	<atom:link href="https://mattische.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mattische.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://mattische.github.io/blog/post/first/</guid>
       <description>testing testing</description>
-    </item>
-    
-    <item>
-      <title>First</title>
-      <link>https://mattische.github.io/blog/posts/first/</link>
-      <pubDate>Mon, 20 Nov 2017 13:07:13 +0100</pubDate>
-      
-      <guid>https://mattische.github.io/blog/posts/first/</guid>
-      <description>test</description>
     </item>
     
   </channel>
