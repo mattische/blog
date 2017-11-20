@@ -1,7 +1,7 @@
 ```
-$ hugo new post/title_of_post.md
-$ hugo undraft content/post/title_of_post.md
-$ hugo
+$ hugo new post/title_of_post.md                      # create new post (document/page)
+$ hugo undraft content/post/title_of_post.md          # mark it for publishing
+$ hugo                                                # publish
 ```
 
 
