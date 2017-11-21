@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Virtual Box on mattische/blog </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://mattische.github.io/blog/tags/virtual-box/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Tue, 21 Nov 2017 10:12:07 CET</updated>
+    
+    <item>
+      <title>Vagrant</title>
+      <link>https://mattische.github.io/blog/post/vagrant/</link>
+      <pubDate>Tue, 21 Nov 2017 10:12:07 CET</pubDate>
+      
+      <guid>https://mattische.github.io/blog/post/vagrant/</guid>
+      <description>Installing vagrant Vagrant is a pretty nifty tool in the sense that have your own virtual development env on your machine. For example, you can simulate your production env.
+You&amp;rsquo;ll need some basic linux knowledge.
+For windows;
+Download and install vagrant and virtualbox;
+https://www.vagrantup.com/
+https://www.virtualbox.org/
+It&amp;rsquo;s a good idea to create a vagrant account. With it, you can save your own boxes/configurations. Go to https://app.vagrantup.com/ and create an account.</description>
+    </item>
+    
+  </channel>
+</rss>
+
