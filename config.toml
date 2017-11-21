@@ -6,7 +6,6 @@ theme = "hugo-theme-pixyll" #"paperback"
 publishDir = "docs"
 
 # for theme pixyll
-title = "mattische/blog"
 author = "mattische"
 
 [indexes]

@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mattische/blog</title>
+      <title>mattische/blog on mattische/blog </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>https://mattische.github.io/blog/</link>
-    <description>Recent content on mattische/blog</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Nov 2017 13:57:59 +0100</lastBuildDate>
     
-	<atom:link href="https://mattische.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    <updated>Mon, 20 Nov 2017 13:57:59 CET</updated>
     
     <item>
       <title>ssh Tunneling</title>
       <link>https://mattische.github.io/blog/post/ssh-tunneling/</link>
-      <pubDate>Mon, 20 Nov 2017 13:57:59 +0100</pubDate>
+      <pubDate>Mon, 20 Nov 2017 13:57:59 CET</pubDate>
       
       <guid>https://mattische.github.io/blog/post/ssh-tunneling/</guid>
       <description>Sorry, this is in swedish only Reverse SSH tunneling / Remote port forwarding Problem: du kan inte komma åt en dator utifrån (den befinner sig förmodligen bakom ett NAT (Network Address Translator).
@@ -26,7 +24,7 @@ Konfiguration: På bägge maskinerna krävs en SSH-server (ssh-deamon). Lägg ti
     <item>
       <title>First</title>
       <link>https://mattische.github.io/blog/post/first/</link>
-      <pubDate>Mon, 20 Nov 2017 13:16:26 +0100</pubDate>
+      <pubDate>Mon, 20 Nov 2017 13:16:26 CET</pubDate>
       
       <guid>https://mattische.github.io/blog/post/first/</guid>
       <description>first post.
@@ -36,7 +34,7 @@ well, ok. welcome.</description>
     <item>
       <title>First</title>
       <link>https://mattische.github.io/blog/posts/first/</link>
-      <pubDate>Mon, 20 Nov 2017 13:07:13 +0100</pubDate>
+      <pubDate>Mon, 20 Nov 2017 13:07:13 CET</pubDate>
       
       <guid>https://mattische.github.io/blog/posts/first/</guid>
       <description>test</description>
@@ -44,3 +42,4 @@ well, ok. welcome.</description>
     
   </channel>
 </rss>
+
