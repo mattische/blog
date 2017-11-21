@@ -2,6 +2,7 @@
 title: "Vagrant"
 date: 2017-11-21T10:12:07+01:00
 tags: [ "vagrant", "virtual box", "dev"]
+author: "mattische"
 ---
 
 ## Installing vagrant
