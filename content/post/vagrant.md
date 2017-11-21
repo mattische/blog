@@ -42,3 +42,63 @@ the commands downloads, boots and you will access the virtual box terminal via s
 Go to https://app.vagrantup.com/ to search and find different boxes and read the documentation.
 
 
+## Provisioning
+
+
+Provisioning in vagrant is efficient when  you need to run several boxes with same software and configuration.
+It's either that or save you configured box at vagrantup.
+
+In the directory you wish to run your box you can place a <pre>Vagrantfile</pre> 
+
+which contains the configuration.
+
+Here is an (stripped down) example;
+
+<pre>
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/xenial64"
+  config.vm.network "forwarded_port", guest: 3306, host: 3333
+  config.vm.network "forwarded_port", guest: 5000, host: 8080
+  config.vm.synced_folder ".", "/vagrant"
+  config.vm.provision "shell", path: "setup.sh" #inline: <<-SHELL
+end
+</pre>
+
+It's ruby indeed.
+
+- The first line, config.vm.box, tells what OS and version that should be used.
+
+- The second and third lines, forwards the box 3306 port to the host (your actual machine) 3333 port.
+We want to expose MySql database to the host and use it from the host (and possibly from outside the host as well).
+
+- The fourth line, syncs the folder <pre>/vagrant</pre> 
+on the box to the folder (.) where the box is run in on the host.
+This is handy since we can use IDE's and editors for source code on the host.
+
+- The last line links a shell-script file with a set of commands that runs and installs some software when we provision the box.
+This way we don't need to run the commands for the same software everytime we reboot or do anything that changes the box state.
+
+
+Here is an example of at sh-script, setup.sh, that installs software and configures MySql server;
+
+<pre>
+# Change these to suit your needs...
+DBHOST=localhost
+DBNAME=dbname
+DBUSER=dbuser
+DBPASSWD=test123
+DB_ROOT_PASS=password123
+
+apt-get -y install curl build-essential python-software-properties git python3
+
+debconf-set-selections <<< "mysql-server mysql-server/root_password password $DB_ROOT_PASS"
+debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $DB_ROOT_PASS"
+
+apt-get -y install mysql-server
+
+# mysql -uroot -p$DB_ROOT_PASS -e "CREATE DATABASE $DBNAME"
+mysql -uroot -p$DB_ROOT_PASS -e "grant all privileges on $DBNAME.* to '$DBUSER'@'$DBHOST' identified by '$DBPASSWD'" 
+</pre>
