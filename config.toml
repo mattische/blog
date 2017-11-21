@@ -2,8 +2,16 @@ baseURL = "https://mattische.github.io/blog/"
 languageCode = "en-us"
 title = "mattische/blog"
 
-theme = "paperback"
+theme = "hugo-theme-pixyll" #"paperback"
 publishDir = "docs"
+
+# for theme pixyll
+title = "mattische/blog"
+author = "mattische"
+
+[indexes]
+category = "categories"
+tag = "tags"
 
 [params]
 
@@ -24,3 +32,7 @@ GithubUsername = "mattische"
 
 # default: undefined
 TwitterUsername = "mattische"
+
+#for pixyll
+twitter_username = "mattische"
+paginate = true
