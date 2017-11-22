@@ -7,8 +7,6 @@ author: "mattische"
 
 <img src="https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_1489710078/vagrant.png" />
 
-## Installing vagrant
-
 
 Vagrant is a pretty nifty tool in the sense that have your own virtual development env on your machine.
 For example, you can simulate your production env.
