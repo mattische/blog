@@ -1,7 +1,6 @@
 ---
 title: "about"
 date: 2017-11-22T08:51:30+01:00
-draft: true
 ---
 
 Hi!
