@@ -26,19 +26,7 @@
       <guid>https://mattische.github.io/blog/about/</guid>
       <description>Hi!
 I am mattische. Im into programming (mainly FOSS, open sourse), dev ops and IoT/WoT. And, music is a passion.
-Github | Twitter</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://mattische.github.io/blog/about/about/</link>
-      <pubDate>Wed, 22 Nov 2017 08:59:35 CET</pubDate>
-      
-      <guid>https://mattische.github.io/blog/about/about/</guid>
-      <description>Welcome to my blog.
-I am mattische. Currently working as a programming teacher at a university.
-Interests includes programming (node, python, go), linux and devops.
-I also play music.22T08 Enjoy.</description>
+I have an old blog here.</description>
     </item>
     
     <item>
@@ -76,15 +64,6 @@ Konfiguration: På bägge maskinerna krävs en SSH-server (ssh-deamon). Lägg ti
       <guid>https://mattische.github.io/blog/post/first/</guid>
       <description>first post.
 well, ok. welcome.</description>
-    </item>
-    
-    <item>
-      <title>First</title>
-      <link>https://mattische.github.io/blog/posts/first/</link>
-      <pubDate>Mon, 20 Nov 2017 13:07:13 CET</pubDate>
-      
-      <guid>https://mattische.github.io/blog/posts/first/</guid>
-      <description>test</description>
     </item>
     
   </channel>

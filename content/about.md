@@ -9,4 +9,4 @@ I am mattische.
 Im into programming (mainly FOSS, open sourse), dev ops and IoT/WoT.
 And, music is a passion.
 
-<a href="https://github.com/mattische">Github</a> | <a href="http://www.twitter.com/mattische">Twitter</a>
+I have an old blog <a href="http://mattische.tumblr.com">here</a>.
