@@ -5,6 +5,8 @@ tags: [ "vagrant", "virtual-box", "dev"]
 author: "mattische"
 ---
 
+<img src="https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_1489710078/vagrant.png" />
+
 ## Installing vagrant
 
 
