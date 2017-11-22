@@ -7,7 +7,27 @@
     <language>en-us</language>
     
     
-    <updated>Wed, 22 Nov 2017 08:59:35 CET</updated>
+    <updated>Wed, 22 Nov 2017 13:04:04 CET</updated>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://mattische.github.io/blog/contact/</link>
+      <pubDate>Wed, 22 Nov 2017 13:04:04 CET</pubDate>
+      
+      <guid>https://mattische.github.io/blog/contact/</guid>
+      <description>Github | Twitter</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://mattische.github.io/blog/about/</link>
+      <pubDate>Wed, 22 Nov 2017 12:59:43 CET</pubDate>
+      
+      <guid>https://mattische.github.io/blog/about/</guid>
+      <description>Hi!
+I am mattische. Im into programming (mainly FOSS, open sourse), dev ops and IoT/WoT. And, music is a passion.
+Github | Twitter</description>
+    </item>
     
     <item>
       <title>About</title>
