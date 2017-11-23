@@ -7,18 +7,18 @@ author: "mattische"
 
 <pre>Sorry, this is in swedish only</pre>
 
-# Reverse SSH tunneling / Remote port forwarding
+## Reverse SSH tunneling / Remote port forwarding
 
-## Problem:
+### Problem:
 du kan inte komma åt en dator utifrån (den befinner sig förmodligen bakom ett NAT (Network Address Translator).
 
-## Lösning:
+### Lösning:
 skapa en ssh tunnel FRÅN oåtkomlig maskin via en åtkomlig maskin.
 
-## Krävs:
+#### Krävs:
 SSH deamon (sshd) och SSH klient på alla maskinerna.
 
-## Konfiguration:
+### Konfiguration:
 På bägge maskinerna krävs en SSH-server (ssh-deamon).
 Lägg till 2 attribut sist i sshd_config:
 
@@ -77,7 +77,7 @@ och du ansluts alltså till 194.47.151.45.
 (tänk på att user ovan ska vara en user på 194.47.151.45)
 
 
-## Local SSH tunneling / Local port forwarding
+### Local SSH tunneling / Local port forwarding
 
 Konfigurera SSH-server och klient enligt ovan.
 Du har åtkomst till en server 91.123.200.138.
@@ -104,13 +104,10 @@ Vi kör alltså kommandot på maskinen där databasen finns - den maskinens loka
 <code>$ mysql -h 91.123.200.138 -u databaseUser -p databasePass --port 9999</code>
 
 
-## Övrigt
+### Övrigt
 För att begränsa ssh-åtkomst till vissa användare på en maskin, lägg till tillåtna användare i /etc/ssh/sshd_config:
 
 
 <code>
-# Only accept connections from specified users
-
-
 AllowUsers user1 user2 user3
 </code>
