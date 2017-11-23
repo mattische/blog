@@ -7,16 +7,20 @@ author: "mattische"
 
 <pre>Sorry, this is in swedish only</pre>
 
-## Reverse SSH tunneling / Remote port forwarding
+### Reverse SSH tunneling / Remote port forwarding
 
-### Problem:
+
+<pre>
+<b>Problem:</b><br />
 du kan inte komma åt en dator utifrån (den befinner sig förmodligen bakom ett NAT (Network Address Translator).
 
-### Lösning:
+<b>Lösning:</b><br />
 skapa en ssh tunnel FRÅN oåtkomlig maskin via en åtkomlig maskin.
 
-#### Krävs:
+<b>Krävs:</b><br />
 SSH deamon (sshd) och SSH klient på alla maskinerna.
+</pre>
+
 
 ### Konfiguration:
 På bägge maskinerna krävs en SSH-server (ssh-deamon).

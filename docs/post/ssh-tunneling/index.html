@@ -54,19 +54,18 @@
 
 <pre>Sorry, this is in swedish only</pre>
 
-<h2 id="reverse-ssh-tunneling-remote-port-forwarding">Reverse SSH tunneling / Remote port forwarding</h2>
+<h3 id="reverse-ssh-tunneling-remote-port-forwarding">Reverse SSH tunneling / Remote port forwarding</h3>
 
-<h3 id="problem">Problem:</h3>
+<pre>
+<b>Problem:</b><br />
+du kan inte komma åt en dator utifrån (den befinner sig förmodligen bakom ett NAT (Network Address Translator).
 
-<p>du kan inte komma åt en dator utifrån (den befinner sig förmodligen bakom ett NAT (Network Address Translator).</p>
+<b>Lösning:</b><br />
+skapa en ssh tunnel FRÅN oåtkomlig maskin via en åtkomlig maskin.
 
-<h3 id="lösning">Lösning:</h3>
-
-<p>skapa en ssh tunnel FRÅN oåtkomlig maskin via en åtkomlig maskin.</p>
-
-<h4 id="krävs">Krävs:</h4>
-
-<p>SSH deamon (sshd) och SSH klient på alla maskinerna.</p>
+<b>Krävs:</b><br />
+SSH deamon (sshd) och SSH klient på alla maskinerna.
+</pre>
 
 <h3 id="konfiguration">Konfiguration:</h3>
 
