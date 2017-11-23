@@ -109,7 +109,8 @@ För att begränsa ssh-åtkomst till vissa användare på en maskin, lägg till 
 
 
 <code>
-#Only accept connections from specified users
+# Only accept connections from specified users
+
 
 AllowUsers user1 user2 user3
 </code>
