@@ -7,7 +7,27 @@
     <language>en-us</language>
     
     
-    <updated>Wed, 22 Nov 2017 13:04:04 CET</updated>
+    <updated>Thu, 23 Nov 2017 14:57:35 CET</updated>
+    
+    <item>
+      <title>tmux</title>
+      <link>https://mattische.github.io/blog/post/tmux/</link>
+      <pubDate>Thu, 23 Nov 2017 14:57:35 CET</pubDate>
+      
+      <guid>https://mattische.github.io/blog/post/tmux/</guid>
+      <description>Isn&amp;rsquo;t tmux just wonderful?
+Start sessions with processes and them attach to them at a later time.
+See this guide; A Quick and Easy Guide to tmux
+
+Memo;
+ $ tmux #start new session
+$ tmux ls #list available sessions
+$ tmux attach -t 0 #attach to session 0, listed from tmux ls
+$ tumux kill-session -t 0 #kill session 0 
+
+Key bindings;
+ C-b % #split pane vertically C-b &#34;</description>
+    </item>
     
     <item>
       <title>Contact</title>

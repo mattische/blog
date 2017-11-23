@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Terminal on mattische/blog </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://mattische.github.io/blog/tags/terminal/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Thu, 23 Nov 2017 14:57:35 CET</updated>
+    
+    <item>
+      <title>tmux</title>
+      <link>https://mattische.github.io/blog/post/tmux/</link>
+      <pubDate>Thu, 23 Nov 2017 14:57:35 CET</pubDate>
+      
+      <guid>https://mattische.github.io/blog/post/tmux/</guid>
+      <description>Isn&amp;rsquo;t tmux just wonderful?
+Start sessions with processes and them attach to them at a later time.
+See this guide; A Quick and Easy Guide to tmux
+
+Memo;
+ $ tmux #start new session
+$ tmux ls #list available sessions
+$ tmux attach -t 0 #attach to session 0, listed from tmux ls
+$ tumux kill-session -t 0 #kill session 0 
+
+Key bindings;
+ C-b % #split pane vertically C-b &#34;</description>
+    </item>
+    
+  </channel>
+</rss>
+
