@@ -172,6 +172,7 @@ If the user is not logged in, we redirect them to index/home. Otherwise nex() is
 <br>
 
 
+
 #### Protecting views
 The function <code>isLoggedIn</code> in /routes/routes.js can be used to check whehter a user is logged in or not. See implementation above<br>
 <br>
