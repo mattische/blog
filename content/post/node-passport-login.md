@@ -50,7 +50,7 @@ The app folder structure is as follows;
       |---- google.js #google configuration with keys and redirect callback
       |---- mongodb.js #mongodb connection string<br>
 /models/<br>
-      |---- user.js #user-model for mongodb, enabling user creation in db. for local strategy<br>
+      |---- user.js #user-model for mongodb, enabling user creation in db<br>
 /passport/
       |---- google.js #passport routes and callbacks for google strategy
       |---- local.js #routes and logic for local strategy<br>
