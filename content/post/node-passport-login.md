@@ -14,7 +14,10 @@ This is a short example of using nodejs with passport's built in strategies for 
 Passport, <a href="http://www.passportjs.org/">http://www.passportjs.org/</a>, have strategies for almost every provider there is. Very handy.<br><br>
 I won't list all source code, you'll find that in the Github repo. Instead, some highlights are shown below.<br>
 
-<a href="https://github.com/mattische/node-passport-example">Here is the Github repo</a> with complete sourcecode.
+<a href="https://github.com/mattische/node-passport-example">Here is the Github repo</a> with complete sourcecode.<br>
+
+
+Here is some slides from a workshop I did (in Swedish only); <a href="https://docs.google.com/presentation/d/129y8zoBR6HGa5gQf-DCNoqmLoCEeai8KOsdg7xBo1go/edit?usp=sharing">nodejs + passport</a>
 
 
 <br><br>
