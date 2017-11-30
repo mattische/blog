@@ -164,7 +164,8 @@ function isLoggedIn(req, res, next) {
         res.redirect('/');
     }
 </pre>
-<br>
+
+
 If the user is logged in, we call next(), which will carry on execution.
 <br>
 If the user is not logged in, we redirect them to index/home. Otherwise nex() is returned, which causes the next middleware to execute.
