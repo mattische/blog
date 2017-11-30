@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Node Passport Login - mattische/blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <link rel="canonical" href="https://mattische.github.io/blog/post/node-passport-login/">
+
+  
+  
+
+  
+  
+
+  
+  
+
+  <link rel="stylesheet" type="text/css" href="https://mattische.github.io/blog//css/combined-min.css">
+
+</head>
+<body class="">
+
+<div class="site-wrap">
+  <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="https://mattische.github.io/blog/" class="site-title">mattische/blog</a>
+      <nav class="site-nav right">
+      <a href="https://mattische.github.io/blog//about/">About</a>
+<a href="https://mattische.github.io/blog//tags/">Tags</a>
+<a href="https://mattische.github.io/blog//contact/">Contact</a>
+</form>
+
+      </nav>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</header>
+
+  <div class="post p2 p-responsive wrap" role="main">
+    <div class="measure">
+      <div class="post-header mb2">
+        <h1 class="py2">Node Passport Login</h1>
+        <span class="post-meta">Nov 27, 2017 by mattische</span><br>
+        
+      </div>
+
+      <article class="post-content">
+      
+
+<h3 id="nodejs-with-passport">nodejs with passport</h3>
+
+<p>Creating a web application often involves some sort of login and user management.
+This is a short example of using nodejs with passport&rsquo;s built in strategies for local (with mongodb) and google OAuth2.<br></p>
+
+<p>Passport, <a href="http://www.passportjs.org/">http://www.passportjs.org/</a>, have strategies for almost every provider there is. Very handy.<br><br>
+I won&rsquo;t list all source code, you&rsquo;ll find that in the Github repo. Instead, some highlights are shown below.<br></p>
+
+<p><a href="https://github.com/mattische/node-passport-example">Here is the Github repo</a> with complete sourcecode.</p>
+
+<p><br><br></p>
+
+<h4 id="prerequisites">Prerequisites</h4>
+
+<ul>
+<li><p><strong>Set up Google</strong><br />
+Go to your Google <a href="https://console.developers.google.com">cloud console</a> and create a new project. <br>
+After project creation, go to the dashboard in the <code>APIs &amp; services</code> view. Choose to enable APIs and find and enable the Google+ API.<br><br>
+Now, in the left pane, choose &lsquo;Credentials&rsquo; and create credentials for this app we are going to create. Choose web application and choose a name.<br>
+Enter the origin and callback URIs and don&rsquo;t forget the port if you are using that.<br>
+In the &lsquo;OAuth consent screen&rsquo; (the view presented to the user during authentication with google) it is important to use the same name as we did in the previous step (under the Credentials tab). Did&rsquo;nt work for me with different names<br>
+Now you&rsquo;re done. It might take a few minutes for the settings to take effect.</p></li>
+
+<li><p><strong>npm init</strong><br>
+Setup your local nodejs app with a package.json. Here is the modules I used;<br>
+<code> bcrypt body-parser connect-flash cookieparser ejs express express-session flash mongoose morgan passport passport-google-oauth passport-local</code>
+<br>
+You might want to copy those and do a<br><code>$ npm install &lt;paste modules&gt; &ndash;save</code><br></p></li>
+
+<li><p><strong>mongodb</strong><br>
+Either install and use a local mongodb instance or use for example a free sandbox mongo-instance from <a href="https://mlab.com">mLab</a>.</p></li>
+
+<li><p><strong>layout</strong><br>
+The app folder structure is as follows;
+<pre>
+/config/<br>
+  |&mdash;- google.js #google configuration with keys and redirect callback
+  |&mdash;- mongodb.js #mongodb connection string<br>
+/models/<br>
+  |&mdash;- user.js #user-model for mongodb, enabling user creation in db. for local strategy<br>
+/passport/
+  |&mdash;- google.js #passport routes and callbacks for google strategy
+  |&mdash;- local.js #routes and logic for local strategy<br>
+/routes/
+  |&mdash;- routes.js #routes for home, login, signup, profile etc<br>
+/views/      #views with ejs
+  |&mdash;- index.ejs
+  |&mdash;- login.ejs
+  |&mdash;- profile.ejs
+  |&mdash;- signup.ejs<br>
+app.js  #entry point
+</pre></p></li>
+</ul>
+
+<h4 id="app-js">app.js</h4>
+
+<p>Here is some of the source for the entry point. Nothing really special, but we have separated passport logic into modules which we import.<br></p>
+
+<p>The local strategy is located in /passport/local.js and google startegy in /passport/google.js.<br>
+We pass the &lsquo;passport&rsquo;-object to those - see last line.<br></p>
+
+<p>Passport needs session to keept track of users.<br>
+We do the mandatory call to initialize().
+<pre></p>
+
+<p>var passport = require(&lsquo;passport&rsquo;);</p>
+
+<p>require(&lsquo;./passport/local&rsquo;)(passport);</p>
+
+<p>require(&lsquo;./passport/google&rsquo;)(passport);</p>
+
+<p>app.use(session({ secret: &ldquo;aVerySecretSecret&rdquo; }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());</p>
+
+<p>app.use(passport.initialize());</p>
+
+<p>app.use(passport.session());</p>
+
+<p>require(&lsquo;./routes/routes.js&rsquo;)(app, passport);</p>
+
+<p></pre>
+<br></p>
+
+<h4 id="session-serialization-and-deserialization">session serialization and deserialization</h4>
+
+<p>To keep track of user passport needs to serialize (and deserialize) the session.<br>
+In /passport/local.js and /passport/google.js we find;
+<pre>
+passport.serializeUser(function(user, done) {
+        done(null, user.id);
+    });</p>
+
+<pre><code>passport.deserializeUser(function(id, done) {
+    User.findById(id, function(err, user) {
+        done(err, user);
+    });
+});
+</code></pre>
+
+<p></pre></p>
+
+<p><strong>user.id</strong> is saved to <code>session req.session.passport.user = {id:&lsquo;..&rsquo;}</code><br>
+Which is transfered to parameter <strong>id</strong> in <code>User.findById</code>.<br>
+In the done-function the user-parameter, user object attaches to the request as <strong>req.user</strong><br></p>
+
+<h4 id="done-what-is-it">done - what is it?</h4>
+
+<p>Let&rsquo;s repeat the code above;
+<pre>
+passport.serializeUser(function(user, done) {
+        done(null, user.id);
+    });</p>
+
+<pre><code>passport.deserializeUser(function(id, done) {
+    User.findById(id, function(err, user) {
+        done(err, user);
+    });
+});
+</code></pre>
+
+<p></pre></p>
+
+<p>What exactly does the done function do?<br>
+From <a href="https://stackoverflow.com/questions/32153865/what-is-done-callback-function-in-passport-strategy-configure-use-function">StackOverflow</a>;
+<strong>done</strong> is a method called internally by the strategy implementation.
+See <a href="https://github.com/jaredhanson/passport-local/blob/master/lib/strategy.js#L80">here</a>.<br>
+There are three possible parameters; err, user, info. In brief;<br>
+<strong>err</strong> is for errors, <strong>user</strong> is data attached back to the current request and <strong>info</strong> can be used for messages, such as flash-messages.
+<br>
+In the above example, in the function serializeUser, no (null) error  object is present and the second argument is data, that in this case, will be serialized. The data is the unique
+session id.<br>
+In the function deserialzeUser no error object is present and the second argument, user, is the data fetched from database. Passport will attach that user data (unique id) to the session.
+<br></p>
+
+<h4 id="routes">routes</h4>
+
+<p>The routes are separated from app.js - they are located in /routes/routes.js.<br>
+No rocket science going on there, but we wrap it as a module and make sure an instance of the app (express) and a passport object is passed in;<br>
+<code>
+module.exports = function(app, passport) {</p>
+
+<pre><code>... all routes ...
+</code></pre>
+
+<p>};
+</code>
+<br></p>
+
+<p>And, in the end of the file we supply a function to check whether a user is logged in;<br>
+<pre>
+function isLoggedIn(req, res, next) {</p>
+
+<pre><code>    if (req.isAuthenticated())
+        return next();
+
+    //not logged in
+    res.redirect('/');
+}
+</code></pre>
+
+<p></pre>
+<br>
+If the user is logged in, we call next(), which will carry on execution.
+<br>
+If the user is not logged in, we redirect them to index/home. Otherwise nex() is returned, which causes the next middleware to execute.
+<br></p>
+
+<h4 id="protecting-views">Protecting views</h4>
+
+<p>The function <code>isLoggedIn</code> in /routes/routes.js can be used to check whehter a user is logged in or not. See implementation above<br>
+<br></p>
+
+<p>It is used like this (in the /example route), as a callback;
+<pre>
+app.get(&lsquo;/example&rsquo;, isLoggedIn, function(req, res) {
+            res.render(&lsquo;example.ejs&rsquo;, {
+                user : req.user
+            });
+        });
+</pre>
+<br></p>
+
+<p>The second parameter is <code>isLoggedIn</code> which of course is a callback. It will execute with the request.<br></p>
+
+      </article>
+
+      <p class="post-meta">Tags:&nbsp;
+        
+            
+            <a href="https://mattische.github.io/blog//tags/node">node</a>
+        
+            ,&nbsp;
+            <a href="https://mattische.github.io/blog//tags/passport">passport</a>
+        
+            ,&nbsp;
+            <a href="https://mattische.github.io/blog//tags/oauth2">oauth2</a>
+        
+            ,&nbsp;
+            <a href="https://mattische.github.io/blog//tags/web-development">web-development</a>
+        
+      </p>
+
+      
+
+    </div>
+  </div>
+</div>
+    <footer class="footer">
+      <div class="p2 wrap">
+        <div class="measure mt1 center">
+      <nav class="social-icons icons">
+<a class="fa fa-rss rss" href="/index.xml"></a>
+
+<a class="fa fa-twitter twitter" href="https://twitter.com/mattische"></a>
+
+</nav>
+
+          <small>
+            Copyright &#169; 2017<br>
+            Powered by <a href="http://gohugo.io/" target="_blank">Hugo</a> &amp; <a href="https://github.com/azmelanar/hugo-theme-pixyll" target="_blank">Pixyll</a>
+          </small>
+        </div>
+      </div>
+    </footer>
+
+    
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+
+
+</body>
+</html>
+

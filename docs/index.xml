@@ -7,7 +7,19 @@
     <language>en-us</language>
     
     
-    <updated>Thu, 23 Nov 2017 14:57:35 CET</updated>
+    <updated>Mon, 27 Nov 2017 13:44:13 CET</updated>
+    
+    <item>
+      <title>Node Passport Login</title>
+      <link>https://mattische.github.io/blog/post/node-passport-login/</link>
+      <pubDate>Mon, 27 Nov 2017 13:44:13 CET</pubDate>
+      
+      <guid>https://mattische.github.io/blog/post/node-passport-login/</guid>
+      <description>nodejs with passport Creating a web application often involves some sort of login and user management. This is a short example of using nodejs with passport&amp;rsquo;s built in strategies for local (with mongodb) and google OAuth2.
+Passport, http://www.passportjs.org/, have strategies for almost every provider there is. Very handy.
+I won&amp;rsquo;t list all source code, you&amp;rsquo;ll find that in the Github repo. Instead, some highlights are shown below.
+Here is the Github repo with complete sourcecode.</description>
+    </item>
     
     <item>
       <title>tmux</title>
