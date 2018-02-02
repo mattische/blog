@@ -71,5 +71,5 @@ Python shell; <code>$ pyspark</code> and a Scala shell: <code>pyspark-shell</cod
 
 You should see something like;
 
-<img src="/img/spark.png" />
+<img src="/blog/static/img/spark.png" />
 
