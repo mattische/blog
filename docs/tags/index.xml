@@ -19,6 +19,15 @@
     </item>
     
     <item>
+      <title>Dlab</title>
+      <link>https://mattische.github.io/blog/tags/dlab/</link>
+      <pubDate>Fri, 02 Feb 2018 13:45:29 CET</pubDate>
+      
+      <guid>https://mattische.github.io/blog/tags/dlab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Node</title>
       <link>https://mattische.github.io/blog/tags/node/</link>
       <pubDate>Mon, 27 Nov 2017 13:44:13 CET</pubDate>
@@ -42,6 +51,15 @@
       <pubDate>Mon, 27 Nov 2017 13:44:13 CET</pubDate>
       
       <guid>https://mattische.github.io/blog/tags/passport/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spark</title>
+      <link>https://mattische.github.io/blog/tags/spark/</link>
+      <pubDate>Fri, 02 Feb 2018 13:45:29 CET</pubDate>
+      
+      <guid>https://mattische.github.io/blog/tags/spark/</guid>
       <description></description>
     </item>
     
@@ -84,7 +102,7 @@
     <item>
       <title>Vagrant</title>
       <link>https://mattische.github.io/blog/tags/vagrant/</link>
-      <pubDate>Tue, 21 Nov 2017 10:12:07 CET</pubDate>
+      <pubDate>Fri, 02 Feb 2018 13:45:29 CET</pubDate>
       
       <guid>https://mattische.github.io/blog/tags/vagrant/</guid>
       <description></description>

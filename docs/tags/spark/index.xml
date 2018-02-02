@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Vagrant on mattische/blog </title>
+      <title>Spark on mattische/blog </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://mattische.github.io/blog/tags/vagrant/</link>
+    <link>https://mattische.github.io/blog/tags/spark/</link>
     <language>en-us</language>
     
     
@@ -20,22 +20,6 @@
 and you&amp;rsquo;re in.
 Install openjdk sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install -y openjdk-8-jdk &amp;amp;&amp;amp; ll /usr/lib/jvm/ &amp;amp;&amp;amp; ll /usr/bin/java &amp;amp;&amp;amp; ll /etc/alternatives/java &amp;amp;&amp;amp; sudo update-alternatives &amp;ndash;config java 
 sudo ln -s /usr/lib/jvm/java-8-openjdk-amd64 /opt/jdk export JAVA_HOME=&amp;lsquo;/opt/jdk&amp;rsquo; &amp;amp;&amp;amp; echo $JAVA_HOME</description>
-    </item>
-    
-    <item>
-      <title>Vagrant</title>
-      <link>https://mattische.github.io/blog/post/vagrant/</link>
-      <pubDate>Tue, 21 Nov 2017 10:12:07 CET</pubDate>
-      
-      <guid>https://mattische.github.io/blog/post/vagrant/</guid>
-      <description>Vagrant is a pretty nifty tool in the sense that have your own virtual development env on your machine. For example, you can simulate your production env.
-You&amp;rsquo;ll need some basic linux knowledge.
-For windows;
-Download and install vagrant and virtualbox;
-https://www.vagrantup.com/
-https://www.virtualbox.org/
-It&amp;rsquo;s a good idea to create a vagrant account. With it, you can save your own boxes/configurations. Go to https://app.vagrantup.com/ and create an account.
-After installation the $ vagrant</description>
     </item>
     
   </channel>

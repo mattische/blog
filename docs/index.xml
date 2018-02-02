@@ -7,7 +7,20 @@
     <language>en-us</language>
     
     
-    <updated>Mon, 27 Nov 2017 13:44:13 CET</updated>
+    <updated>Fri, 02 Feb 2018 13:45:29 CET</updated>
+    
+    <item>
+      <title>Spark installation in vagrant</title>
+      <link>https://mattische.github.io/blog/post/spark_installation_vagrant/</link>
+      <pubDate>Fri, 02 Feb 2018 13:45:29 CET</pubDate>
+      
+      <guid>https://mattische.github.io/blog/post/spark_installation_vagrant/</guid>
+      <description>Reference: thank you Bin  Ubuntu xenial This was done inside a vagrant machine; ubuntu xenial (16.04).
+ $ vagrant init envimation/ubuntu-xenial $ vagrant up $ vagrant ssh 
+and you&amp;rsquo;re in.
+Install openjdk sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install -y openjdk-8-jdk &amp;amp;&amp;amp; ll /usr/lib/jvm/ &amp;amp;&amp;amp; ll /usr/bin/java &amp;amp;&amp;amp; ll /etc/alternatives/java &amp;amp;&amp;amp; sudo update-alternatives &amp;ndash;config java 
+sudo ln -s /usr/lib/jvm/java-8-openjdk-amd64 /opt/jdk export JAVA_HOME=&amp;lsquo;/opt/jdk&amp;rsquo; &amp;amp;&amp;amp; echo $JAVA_HOME</description>
+    </item>
     
     <item>
       <title>Node Passport Login</title>
