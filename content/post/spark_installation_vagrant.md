@@ -69,3 +69,7 @@ export PYSPARK_PYTHON=python3
 ### test installation
 Python shell; <code>$ pyspark</code> and a Scala shell: <code>pyspark-shell</code>
 
+You should see something like;
+
+<img src="https://github.com/mattische/blog/img/spark.PNG" />
+
