@@ -40,7 +40,7 @@ sudo update-alternatives --config java
 
 <code class="bash">
 $ sudo ln -s /usr/lib/jvm/java-8-openjdk-amd64 /opt/jdk
-$ export JAVA_HOME='/opt/jdk' && \
+$ export JAVA_HOME=/opt/jdk && \
 echo $JAVA_HOME
 </code>
 
@@ -70,7 +70,7 @@ $ export PYSPARK_PYTHON=python3
 
 
 ### test installation
-Python shell; <code>$ pyspark</code> and a Scala shell: <code>$ pyspark-shell</code>
+Python shell; <code>$ pyspark</code> and a Scala shell: <code>$ spark-shell</code>
 
 You should see something like;
 
@@ -93,7 +93,7 @@ For convenience, all the above vars can be placed in .bashrc;
 
 #JAVA, SPARK AND JUPYTER
 
-export JAVA_HOME=‘/opt/jdk’
+export JAVA_HOME=/opt/jdk
 
 export SPARK_HOME=/home/vagrant/spark
 

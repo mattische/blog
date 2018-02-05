@@ -84,7 +84,7 @@ sudo update-alternatives &ndash;config java
 
 <p><code class="bash">
 $ sudo ln -s /usr/lib/jvm/java-8-openjdk-amd64 /opt/jdk
-$ export JAVA_HOME=&lsquo;/opt/jdk&rsquo; &amp;&amp; <br />
+$ export JAVA_HOME=/opt/jdk &amp;&amp; <br />
 echo $JAVA_HOME
 </code></p>
 
@@ -111,7 +111,7 @@ $ export PYSPARK_PYTHON=python3
 
 <h3 id="test-installation">test installation</h3>
 
-<p>Python shell; <code>$ pyspark</code> and a Scala shell: <code>$ pyspark-shell</code></p>
+<p>Python shell; <code>$ pyspark</code> and a Scala shell: <code>$ spark-shell</code></p>
 
 <p>You should see something like;</p>
 
@@ -134,7 +134,7 @@ It is really not necessary to run spark master to enable the spark terminal.</p>
 
 <p>#JAVA, SPARK AND JUPYTER</p>
 
-<p>export JAVA_HOME=‘/opt/jdk’</p>
+<p>export JAVA_HOME=/opt/jdk</p>
 
 <p>export SPARK_HOME=/home/vagrant/spark</p>
 
