@@ -53,6 +53,9 @@
       
 
 <pre>
+This guide is how to install <a href="https://spark.apache.org/">Spark</a>, single node, in a Vagrant virtual machine.
+
+
 Reference: <a href="http://dmml.nu/spark-install]">thank you Bin</a>
 </pre>
 
@@ -71,7 +74,7 @@ $ vagrant ssh
 <h3 id="install-openjdk">Install openjdk</h3>
 
 <p><code class="bash">
-sudo apt-get update &amp;&amp; <br />
+$ sudo apt-get update &amp;&amp; <br />
 sudo apt-get install -y openjdk-8-jdk &amp;&amp; <br />
 ll /usr/lib/jvm/ &amp;&amp; <br />
 ll /usr/bin/java &amp;&amp; <br />
@@ -80,17 +83,17 @@ sudo update-alternatives &ndash;config java
 </code></p>
 
 <p><code class="bash">
-sudo ln -s /usr/lib/jvm/java-8-openjdk-amd64 /opt/jdk
-export JAVA_HOME=&lsquo;/opt/jdk&rsquo; &amp;&amp; <br />
+$ sudo ln -s /usr/lib/jvm/java-8-openjdk-amd64 /opt/jdk
+$ export JAVA_HOME=&lsquo;/opt/jdk&rsquo; &amp;&amp; <br />
 echo $JAVA_HOME
 </code></p>
 
-<p>You might consider putting the vars ($JAVA_HOME) in bash_rc or similar.</p>
+<p>You might consider putting the vars ($JAVA_HOME) in .bashrc or similar.</p>
 
 <h3 id="install-spark">Install spark</h3>
 
 <p><code class="bash">
-wget <a href="http://www.apache.org/dist/spark/spark-2.0.2/spark-2.0.2-bin-hadoop2.7.tgz">http://www.apache.org/dist/spark/spark-2.0.2/spark-2.0.2-bin-hadoop2.7.tgz</a> &amp;&amp; <br />
+$ wget <a href="http://www.apache.org/dist/spark/spark-2.0.2/spark-2.0.2-bin-hadoop2.7.tgz">http://www.apache.org/dist/spark/spark-2.0.2/spark-2.0.2-bin-hadoop2.7.tgz</a> &amp;&amp; <br />
 tar xvzf spark-2.0.2-bin-hadoop2.7.tgz &amp;&amp; <br />
 mv spark-2.0.2-bin-hadoop2.7 spark &amp;&amp; <br />
 export SPARK_HOME=/home/vagrant/spark &amp;&amp; <br />
@@ -103,16 +106,44 @@ echo $PATH
 <p>In case you want/need python 3 - install that as well (sudo apt-get install python3)</p>
 
 <p><code class="bash">
-export PYSPARK_PYTHON=python3
+$ export PYSPARK_PYTHON=python3
 </code></p>
 
 <h3 id="test-installation">test installation</h3>
 
-<p>Python shell; <code>$ pyspark</code> and a Scala shell: <code>pyspark-shell</code></p>
+<p>Python shell; <code>$ pyspark</code> and a Scala shell: <code>$ pyspark-shell</code></p>
 
 <p>You should see something like;</p>
 
 <p><img src="https://raw.githubusercontent.com/mattische/blog/master/static/img/spark.PNG" height="50%" width="50%" /></p>
+
+<h3 id="run-spark">Run spark</h3>
+
+<p><code class="bash">
+$ sudo ./spark/sbin/start-master.sh
+</code></p>
+
+<p>The above runs spark on the master - since we have only one instance this is the master.
+It is really not necessary to run spark master to enable the spark terminal.</p>
+
+<h3 id="bashrc">.bashrc</h3>
+
+<p>For convenience, all the above vars can be placed in .bashrc;</p>
+
+<p><code class="bash"></p>
+
+<h1 id="java-spark-and-jupyter">JAVA, SPARK AND JUPYTER</h1>
+
+<p>export JAVA_HOME=‘/opt/jdk’</p>
+
+<p>export SPARK_HOME=/home/vagrant/spark</p>
+
+<p>export PATH=$SPARK_HOME/bin:$PATH</p>
+
+<p>export PYSPARK_PYTHON=python3</p>
+
+<p>export PYTHONPATH=$SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.10.3-src.zip:$PYTHONPATH
+</code></p>
 
       </article>
 
