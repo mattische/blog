@@ -24,7 +24,7 @@ We will expose the ports for Jupyter and Spark to the host (you physical machine
 We will expose 2 ports - 8888 for the Jupyter notebooks and 7077 for the Spark master.
 Add two entries for each port, via <pre>config.vm.network </pre> 
 
-directives, guest is the vagrant machine and host the physical machine;
+Vagrantfile;
 
 <code class="bash">
 Vagrant.configure("2") do |config|

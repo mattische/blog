@@ -90,7 +90,8 @@ It is really not necessary to run spark master to enable the spark terminal.
 For convenience, all the above vars can be placed in .bashrc;
 
 <code class="bash">
-# JAVA, SPARK AND JUPYTER
+
+#JAVA, SPARK AND JUPYTER
 
 export JAVA_HOME=‘/opt/jdk’
 
