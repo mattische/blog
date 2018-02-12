@@ -66,6 +66,8 @@ Also, install scala;<br>
 $ sudo apt-get install python-dev python-pip python-numpy python-scipy python-pandas gfortran python3 scala
 </pre>
 <br>
+
+
 <code class="bash">
 $ export PYSPARK_PYTHON=python3
 </code>
