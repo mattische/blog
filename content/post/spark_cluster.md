@@ -69,6 +69,8 @@ $ sudo apt-get install python-dev python-pip python-numpy python-scipy python-pa
 <code class="bash">
 $ export PYSPARK_PYTHON=python3
 </code>
+
+
 <br>
 Now we can access both shells; <pre>$ pyspark</pre>(python) and <pre>$ spark-shell</pre> (scala).
 
