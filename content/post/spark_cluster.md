@@ -82,6 +82,8 @@ Now we can access both shells; <pre>$ pyspark</pre>(python) and <pre>$ spark-she
 ### Conf and start master
 
 The configuration added is located in <pre>SPARK_HOME/conf/spark-env.sh</pre><br>
+
+
 There is a template-configuration file which you can copy and save as spark-env.sh.<br>
 In spar-env.sh add we add our master IP;
 <pre>
