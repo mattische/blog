@@ -148,6 +148,15 @@ The output in the log, if you tail -f it, should be similar to</p>
 
 <pre>INFO Worker: Successfully registered with master spark://SPARK_MASTER_IP:7077</pre>
 
+<p><br>
+To start a pyspark-shell on the master, from the slave (or any machine subsequently);<br></p>
+
+<p><code>
+$ pyspark &ndash;master spark://$SPARK_MASTER_HOST:7077
+</code></p>
+
+<p><br></p>
+
 <p>Now we can acces the master web view via port 8080.<br>
 There, it should output that one worker is active.<br></p>
 

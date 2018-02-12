@@ -114,6 +114,15 @@ The output in the log, if you tail -f it, should be similar to
 <pre>INFO Worker: Successfully registered with master spark://SPARK_MASTER_IP:7077</pre>
 
 
+<br>
+To start a pyspark-shell on the master, from the slave (or any machine subsequently);<br>
+
+
+<code>
+$ pyspark --master spark://$SPARK_MASTER_HOST:7077
+</code>
+
+<br>
 
 
 Now we can acces the master web view via port 8080.<br>
