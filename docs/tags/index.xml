@@ -7,7 +7,16 @@
     <language>en-us</language>
     
     
-    <updated>Tue, 21 Nov 2017 10:12:07 CET</updated>
+    <updated>Mon, 12 Feb 2018 11:40:21 CET</updated>
+    
+    <item>
+      <title>Cluster</title>
+      <link>https://mattische.github.io/blog/tags/cluster/</link>
+      <pubDate>Mon, 12 Feb 2018 11:40:21 CET</pubDate>
+      
+      <guid>https://mattische.github.io/blog/tags/cluster/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Dev</title>
@@ -21,7 +30,7 @@
     <item>
       <title>Dlab</title>
       <link>https://mattische.github.io/blog/tags/dlab/</link>
-      <pubDate>Mon, 05 Feb 2018 11:35:09 CET</pubDate>
+      <pubDate>Mon, 12 Feb 2018 11:40:21 CET</pubDate>
       
       <guid>https://mattische.github.io/blog/tags/dlab/</guid>
       <description></description>
@@ -66,7 +75,7 @@
     <item>
       <title>Spark</title>
       <link>https://mattische.github.io/blog/tags/spark/</link>
-      <pubDate>Mon, 05 Feb 2018 11:35:09 CET</pubDate>
+      <pubDate>Mon, 12 Feb 2018 11:40:21 CET</pubDate>
       
       <guid>https://mattische.github.io/blog/tags/spark/</guid>
       <description></description>

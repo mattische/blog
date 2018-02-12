@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Spark cluster how-to - mattische/blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <link rel="canonical" href="https://mattische.github.io/blog/post/spark_cluster/">
+
+  
+  
+
+  
+  
+
+  
+  
+
+  <link rel="stylesheet" type="text/css" href="https://mattische.github.io/blog//css/combined-min.css">
+
+</head>
+<body class="">
+
+<div class="site-wrap">
+  <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="https://mattische.github.io/blog/" class="site-title">mattische/blog</a>
+      <nav class="site-nav right">
+      <a href="https://mattische.github.io/blog//about/">About</a>
+<a href="https://mattische.github.io/blog//tags/">Tags</a>
+<a href="https://mattische.github.io/blog//contact/">Contact</a>
+</form>
+
+      </nav>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</header>
+
+  <div class="post p2 p-responsive wrap" role="main">
+    <div class="measure">
+      <div class="post-header mb2">
+        <h1 class="py2">Spark cluster how-to</h1>
+        <span class="post-meta">Feb 12, 2018 by mattische</span><br>
+        
+      </div>
+
+      <article class="post-content">
+      
+
+<pre>
+This is how to get a Spark cluster running, with one master and one slave (worker).
+<br>
+I used a droplet on digital ocean (master) and one local vagrant machine (slave).<br>
+<a href="https://mattische.github.io/blog/post/spark_installation_vagrant/">spark in vagrant</a>
+<br>
+
+
+References:
+
+<a href="http://dmml.nu/spark-install">thank you Bin</a><br>
+<a href="http://paxcel.net/blog/how-to-setup-apache-spark-standalone-cluster-on-multiple-machine/">kulwant singh</a><br>
+<a href="https://blog.insightdatascience.com/spinning-up-a-spark-cluster-on-spot-instances-step-by-step-e8ed14ebb3b">austin ouyang</a>
+
+
+</pre>
+
+<h3 id="installation-on-all-nodes-master-and-slaves">Installation on all nodes (master and slaves)</h3>
+
+<p>For the slave (worker) I used a vagrant machine as in my <a href="https://mattische.github.io/blog/post/spark_installation_vagrant/">previous post</a>.<br>
+For the master I used a droplet on Digital Ocean.<br><br></p>
+
+<p><em>Installation on both master and slaves;</em><br><br></p>
+
+<p>Install java;<br>
+<code class="bash">
+$ sudo apt-get update &amp;&amp; <br />
+sudo apt-get install -y openjdk-8-jdk &amp;&amp; <br />
+ll /usr/lib/jvm/ &amp;&amp; <br />
+ll /usr/bin/java &amp;&amp; <br />
+ll /etc/alternatives/java &amp;&amp; <br />
+sudo update-alternatives &ndash;config java
+</code>
+<br>Environment var for Java;<br>
+<code class="bash">
+$ sudo ln -s /usr/lib/jvm/java-8-openjdk-amd64 /opt/jdk
+$ export JAVA_HOME=/opt/jdk &amp;&amp; <br />
+echo $JAVA_HOME
+</code></p>
+
+<p><br>
+<br></p>
+
+<p>Install spark;<br>
+<code class="bash">
+$ wget <a href="http://www.apache.org/dist/spark/spark-2.0.2/spark-2.0.2-bin-hadoop2.7.tgz">http://www.apache.org/dist/spark/spark-2.0.2/spark-2.0.2-bin-hadoop2.7.tgz</a> &amp;&amp; <br />
+tar xvzf spark-2.0.2-bin-hadoop2.7.tgz &amp;&amp; <br />
+mv spark-2.0.2-bin-hadoop2.7 spark &amp;&amp; <br />
+export SPARK_HOME=/home/vagrant/spark &amp;&amp; <br />
+export PATH=$SPARK_HOME/bin:$PATH &amp;&amp; <br />
+echo $PATH
+</code></p>
+
+<p>If you don&rsquo;t have python 3 - install that as well (along with packages for jupyter (which you&rsquo;ll most likely want)).<br>
+Also, install scala;<br>
+<pre>
+$ sudo apt-get install python-dev python-pip python-numpy python-scipy python-pandas gfortran python3 scala
+</pre>
+<br>
+<code class="bash">
+$ export PYSPARK_PYTHON=python3
+</code>
+<br>
+Now we can access both shells; <pre>$ pyspark</pre>(python) and <pre>$ spark-shell</pre> (scala).</p>
+
+<p><br><br></p>
+
+<h3 id="conf-and-start-master">Conf and start master</h3>
+
+<p>The configuration added is located in <pre>SPARK_HOME/conf/spark-env.sh</pre><br>
+There is a template-configuration file which you can copy and save as spark-env.sh.<br>
+In spar-env.sh add we add our master IP;
+<pre>
+SPARK_MASTER_HOST=IP_ADDRESS
+</pre></p>
+
+<p>Start the master with;<br></p>
+
+<pre>$ spark/sbin/start-master.sh</pre>
+
+<h3 id="start-the-slave-worker">Start the slave (worker)</h3>
+
+<p>When starting the slave, we supply the IP of the master like so;<br></p>
+
+<pre>$ spark/sbin/start-slave.sh spark://SPARK_MASTER_IP:7077</pre>
+
+<p><br>
+<br>
+The output should be similar to <pre>INFO Worker: Successfully registered with master spark://SPARK_MASTER_IP:7077</pre></p>
+
+<p>Now we can acces the master web view via port 8080.<br>
+There, it should output that one worker is active.<br></p>
+
+<p><img src="https://raw.githubusercontent.com/mattische/blog/master/static/img/spark-master.PNG" /></p>
+
+      </article>
+
+      <p class="post-meta">Tags:&nbsp;
+        
+            
+            <a href="https://mattische.github.io/blog//tags/cluster">cluster</a>
+        
+            ,&nbsp;
+            <a href="https://mattische.github.io/blog//tags/spark">spark</a>
+        
+            ,&nbsp;
+            <a href="https://mattische.github.io/blog//tags/dlab">dlab</a>
+        
+      </p>
+
+      
+
+    </div>
+  </div>
+</div>
+    <footer class="footer">
+      <div class="p2 wrap">
+        <div class="measure mt1 center">
+      <nav class="social-icons icons">
+<a class="fa fa-rss rss" href="/index.xml"></a>
+
+<a class="fa fa-twitter twitter" href="https://twitter.com/mattische"></a>
+
+</nav>
+
+          <small>
+            Copyright &#169; 2017<br>
+            Powered by <a href="http://gohugo.io/" target="_blank">Hugo</a> &amp; <a href="https://github.com/azmelanar/hugo-theme-pixyll" target="_blank">Pixyll</a>
+          </small>
+        </div>
+      </div>
+    </footer>
+
+    
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+
+
+</body>
+</html>
+

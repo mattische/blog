@@ -7,7 +7,20 @@
     <language>en-us</language>
     
     
-    <updated>Mon, 05 Feb 2018 11:35:09 CET</updated>
+    <updated>Mon, 12 Feb 2018 11:40:21 CET</updated>
+    
+    <item>
+      <title>Spark cluster how-to</title>
+      <link>https://mattische.github.io/blog/post/spark_cluster/</link>
+      <pubDate>Mon, 12 Feb 2018 11:40:21 CET</pubDate>
+      
+      <guid>https://mattische.github.io/blog/post/spark_cluster/</guid>
+      <description>This is how to get a Spark cluster running, with one master and one slave (worker). I used a droplet on digital ocean (master) and one local vagrant machine (slave).
+spark in vagrant References: thank you Bin
+kulwant singh
+austin ouyang  Installation on all nodes (master and slaves) For the slave (worker) I used a vagrant machine as in my previous post.
+For the master I used a droplet on Digital Ocean.</description>
+    </item>
     
     <item>
       <title>Install jupyter with spark</title>
