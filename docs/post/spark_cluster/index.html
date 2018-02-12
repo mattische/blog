@@ -126,10 +126,11 @@ Now we can access both shells; <pre>$ pyspark</pre>(python) and <pre>$ spark-she
 <p>The configuration added is located in <pre>SPARK_HOME/conf/spark-env.sh</pre><br></p>
 
 <p>There is a template-configuration file which you can copy and save as spark-env.sh.<br>
-In spar-env.sh add we add our master IP;
+In spar-env.sh add we add our master IP;</p>
+
 <pre>
 SPARK_MASTER_HOST=IP_ADDRESS
-</pre></p>
+</pre>
 
 <p>Start the master with;<br></p>
 
@@ -143,7 +144,9 @@ SPARK_MASTER_HOST=IP_ADDRESS
 
 <p><br>
 <br>
-The output in the log, should be similar to <pre>INFO Worker: Successfully registered with master spark://SPARK_MASTER_IP:7077</pre></p>
+The output in the log, if you tail -f it, should be similar to</p>
+
+<pre>INFO Worker: Successfully registered with master spark://SPARK_MASTER_IP:7077</pre>
 
 <p>Now we can acces the master web view via port 8080.<br>
 There, it should output that one worker is active.<br></p>

@@ -86,6 +86,8 @@ The configuration added is located in <pre>SPARK_HOME/conf/spark-env.sh</pre><br
 
 There is a template-configuration file which you can copy and save as spark-env.sh.<br>
 In spar-env.sh add we add our master IP;
+
+
 <pre>
 SPARK_MASTER_HOST=IP_ADDRESS
 </pre>
@@ -107,7 +109,9 @@ When starting the slave, we supply the IP of the master like so;<br>
 
 <br>
 <br>
-The output in the log, should be similar to <pre>INFO Worker: Successfully registered with master spark://SPARK_MASTER_IP:7077</pre>
+The output in the log, if you tail -f it, should be similar to 
+
+<pre>INFO Worker: Successfully registered with master spark://SPARK_MASTER_IP:7077</pre>
 
 
 
