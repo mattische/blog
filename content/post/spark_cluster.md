@@ -27,7 +27,7 @@ References:
 For the slave (worker) I used a vagrant machine as in my <a href="https://mattische.github.io/blog/post/spark_installation_vagrant/">previous post</a>.<br>
 For the master I used a droplet on Digital Ocean.<br><br>
 
-*Installation on both master and slaves;*<br><br>
+_Installation on both master and slaves;_<br><br>
 
 Install java;<br>
 <code class="bash">
@@ -75,7 +75,7 @@ $ export PYSPARK_PYTHON=python3
 
 
 <br>
-Now we can access both shells; <pre>$ pyspark</pre>(python) and <pre>$ spark-shell</pre> (scala).
+Now we can access both shells; _$ pyspark_(python) and _$ spark-shell_ (scala).
 
 <br><br>
 
