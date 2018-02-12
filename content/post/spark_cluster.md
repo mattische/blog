@@ -68,6 +68,7 @@ $ sudo apt-get install python-dev python-pip python-numpy python-scipy python-pa
 <br>
 
 
+
 <code class="bash">
 $ export PYSPARK_PYTHON=python3
 </code>
@@ -104,7 +105,7 @@ When starting the slave, we supply the IP of the master like so;<br>
 
 <br>
 <br>
-The output should be similar to <pre>INFO Worker: Successfully registered with master spark://SPARK_MASTER_IP:7077</pre>
+The output in the log, should be similar to <pre>INFO Worker: Successfully registered with master spark://SPARK_MASTER_IP:7077</pre>
 
 
 
