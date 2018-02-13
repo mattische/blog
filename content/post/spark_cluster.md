@@ -81,7 +81,9 @@ Now we can access both shells; _$ pyspark_(python) and _$ spark-shell_ (scala).
 
 ### Conf and start master
 
-The configuration added is located in <pre>SPARK_HOME/conf/spark-env.sh</pre><br>
+The configuration added is located in <pre>SPARK_HOME/conf/spark-env.sh</pre><br>.
+
+Please note, that this configuration is not mandatory.
 
 
 There is a template-configuration file which you can copy and save as spark-env.sh.<br>
