@@ -107,13 +107,13 @@ Start the master with;<br>
 
 When starting the slave, we supply the IP of the master like so;<br>
 
-<pre>$ spark/sbin/start-slave.sh spark://SPARK_MASTER_IP:7077</pre>
+<pre>$ spark/sbin/start-slave.sh spark://SPARK_MASTER_HOST:7077</pre>
 
 <br>
 <br>
 The output in the log, if you tail -f it, should be similar to 
 
-<pre>INFO Worker: Successfully registered with master spark://SPARK_MASTER_IP:7077</pre>
+<pre>INFO Worker: Successfully registered with master spark://SPARK_MASTER_HOST:7077</pre>
 
 
 <br>
