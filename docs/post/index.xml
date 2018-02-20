@@ -7,7 +7,22 @@
     <language>en-us</language>
     
     
-    <updated>Mon, 12 Feb 2018 11:40:21 CET</updated>
+    <updated>Tue, 20 Feb 2018 10:02:58 CET</updated>
+    
+    <item>
+      <title>ssh</title>
+      <link>https://mattische.github.io/blog/post/ssh/</link>
+      <pubDate>Tue, 20 Feb 2018 10:02:58 CET</pubDate>
+      
+      <guid>https://mattische.github.io/blog/post/ssh/</guid>
+      <description>generate ssh key Generate your key;
+ $ ssh-keygen -t rsa  Follow the prompts - choose default location where keys will be saved.
+A ~/.ssh directory hase been created with your keys in it. The .pub is your public key an the other file is your private key.
+References
+Digital Ocean, Github
+
+copy your public key to the server This assumes there is no .ssh directory on the server.</description>
+    </item>
     
     <item>
       <title>Spark cluster how-to</title>
