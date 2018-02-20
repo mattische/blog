@@ -52,6 +52,16 @@
       <article class="post-content">
       
 
+<h3 id="ssh-connect">ssh connect</h3>
+
+<pre><code>$ ssh userNameOnServer@&lt;IP_ADDRESS_OF_SERVER&gt;
+</code></pre>
+
+<p>connects via ssh to the server on port 22. If the port is not 22, add portnumber via argument -p;</p>
+
+<pre><code>$ ssh userNameOnServer@&lt;IP_ADDRESS_OF_SERVER&gt; -p &lt;PORT_NBR&gt;
+</code></pre>
+
 <h3 id="generate-ssh-key">generate ssh key</h3>
 
 <p>Generate your key;</p>
@@ -110,6 +120,12 @@ ServerAliveInterval 30
 </code></pre>
 
 <p><strong>ServerAliveInterval</strong> sends dummy packages every x seconds to prevent tunnels/connection drop.</p>
+
+<h3 id="ssh-tunneling">ssh tunneling</h3>
+
+<p><a href="https://mattische.github.io/blog/post/ssh-tunneling/">post about tunneling</a></p>
+
+<p><em>swedish only</em></p>
 
       </article>
 

@@ -6,7 +6,18 @@ tags: [ "ssh" ]
 ---
 
 
+### ssh connect
 
+```
+$ ssh userNameOnServer@<IP_ADDRESS_OF_SERVER>
+```
+
+connects via ssh to the server on port 22. If the port is not 22, add portnumber via argument -p;
+
+
+```
+$ ssh userNameOnServer@<IP_ADDRESS_OF_SERVER> -p <PORT_NBR>
+```
 
 
 
@@ -87,4 +98,11 @@ $ ssh dev
 ```
 
 **ServerAliveInterval** sends dummy packages every x seconds to prevent tunnels/connection drop.
+
+
+### ssh tunneling
+
+<a href="https://mattische.github.io/blog/post/ssh-tunneling/">post about tunneling</a>
+
+_swedish only_
 

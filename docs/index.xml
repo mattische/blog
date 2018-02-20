@@ -15,13 +15,10 @@
       <pubDate>Tue, 20 Feb 2018 10:02:58 CET</pubDate>
       
       <guid>https://mattische.github.io/blog/post/ssh/</guid>
-      <description>generate ssh key Generate your key;
+      <description>ssh connect $ ssh userNameOnServer@&amp;lt;IP_ADDRESS_OF_SERVER&amp;gt;  connects via ssh to the server on port 22. If the port is not 22, add portnumber via argument -p;
+$ ssh userNameOnServer@&amp;lt;IP_ADDRESS_OF_SERVER&amp;gt; -p &amp;lt;PORT_NBR&amp;gt;  generate ssh key Generate your key;
  $ ssh-keygen -t rsa  Follow the prompts - choose default location where keys will be saved.
-A ~/.ssh directory hase been created with your keys in it. The .pub is your public key an the other file is your private key.
-References
-Digital Ocean, Github
-
-copy your public key to the server This assumes there is no .ssh directory on the server.</description>
+A ~/.ssh directory hase been created with your keys in it. The .pub is your public key an the other file is your private key.</description>
     </item>
     
     <item>
