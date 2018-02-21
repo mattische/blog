@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>pipenv - mattische/blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <link rel="canonical" href="https://mattische.github.io/blog/post/pipenv/">
+
+  
+  
+
+  
+  
+
+  
+  
+
+  <link rel="stylesheet" type="text/css" href="https://mattische.github.io/blog//css/combined-min.css">
+
+</head>
+<body class="">
+
+<div class="site-wrap">
+  <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="https://mattische.github.io/blog/" class="site-title">mattische/blog</a>
+      <nav class="site-nav right">
+      <a href="https://mattische.github.io/blog//about/">About</a>
+<a href="https://mattische.github.io/blog//tags/">Tags</a>
+<a href="https://mattische.github.io/blog//contact/">Contact</a>
+</form>
+
+      </nav>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</header>
+
+  <div class="post p2 p-responsive wrap" role="main">
+    <div class="measure">
+      <div class="post-header mb2">
+        <h1 class="py2">pipenv</h1>
+        <span class="post-meta">Feb 21, 2018 by mattische</span><br>
+        
+      </div>
+
+      <article class="post-content">
+      
+
+<p><strong>pipenv</strong> is a tool like npm - it creates, per project, an isolated virtual env.</p>
+
+<pre>
+Pipenv is a tool that aims to bring the best of all packaging worlds (bundler, composer, npm, cargo, yarn, etc.) 
+to the Python world. 
+Windows is a first–class citizen, in our world.
+
+
+It automatically creates and manages a virtualenv for your projects, as well as adds/removes packages from your 
+Pipfile as you install/uninstall packages. 
+
+It also generates the ever–important Pipfile.lock, which is used to produce deterministic builds.
+</pre>
+
+<p><strong>source</strong>: <a href="https://docs.pipenv.org/">https://docs.pipenv.org/</a></p>
+
+<p><br><br><br></p>
+
+<h3 id="install">install</h3>
+
+<p>Install pipenv;</p>
+
+<pre><code>$ pip install pipenv
+</code></pre>
+
+<p>No pip?</p>
+
+<pre><code>$ sudo apt-get install python-pip python-dev build-essential 
+</code></pre>
+
+<h3 id="using">using</h3>
+
+<pre><code>$ cd my_python_project
+
+$ pipenv install jupyter requests
+
+$ pipenv run main.py
+</code></pre>
+
+<p>Voila.
+You&rsquo;ve got an virtual env and a Pipfile (containing installed packages - like a package.json /w node/npm)</p>
+
+      </article>
+
+      <p class="post-meta">Tags:&nbsp;
+        
+            
+            <a href="https://mattische.github.io/blog//tags/pipenv">pipenv</a>
+        
+            ,&nbsp;
+            <a href="https://mattische.github.io/blog//tags/python">python</a>
+        
+            ,&nbsp;
+            <a href="https://mattische.github.io/blog//tags/pip">pip</a>
+        
+      </p>
+
+      
+
+    </div>
+  </div>
+</div>
+    <footer class="footer">
+      <div class="p2 wrap">
+        <div class="measure mt1 center">
+      <nav class="social-icons icons">
+<a class="fa fa-rss rss" href="/index.xml"></a>
+
+<a class="fa fa-twitter twitter" href="https://twitter.com/mattische"></a>
+
+</nav>
+
+          <small>
+            Copyright &#169; 2017<br>
+            Powered by <a href="http://gohugo.io/" target="_blank">Hugo</a> &amp; <a href="https://github.com/azmelanar/hugo-theme-pixyll" target="_blank">Pixyll</a>
+          </small>
+        </div>
+      </div>
+    </footer>
+
+    
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+
+
+</body>
+</html>
+

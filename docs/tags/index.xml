@@ -73,6 +73,33 @@
     </item>
     
     <item>
+      <title>Pip</title>
+      <link>https://mattische.github.io/blog/tags/pip/</link>
+      <pubDate>Wed, 21 Feb 2018 09:32:21 CET</pubDate>
+      
+      <guid>https://mattische.github.io/blog/tags/pip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pipenv</title>
+      <link>https://mattische.github.io/blog/tags/pipenv/</link>
+      <pubDate>Wed, 21 Feb 2018 09:32:21 CET</pubDate>
+      
+      <guid>https://mattische.github.io/blog/tags/pipenv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://mattische.github.io/blog/tags/python/</link>
+      <pubDate>Wed, 21 Feb 2018 09:32:21 CET</pubDate>
+      
+      <guid>https://mattische.github.io/blog/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Spark</title>
       <link>https://mattische.github.io/blog/tags/spark/</link>
       <pubDate>Mon, 12 Feb 2018 11:40:21 CET</pubDate>
@@ -114,33 +141,6 @@
       <pubDate>Mon, 20 Nov 2017 13:57:59 CET</pubDate>
       
       <guid>https://mattische.github.io/blog/tags/tunneling/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vagrant</title>
-      <link>https://mattische.github.io/blog/tags/vagrant/</link>
-      <pubDate>Mon, 05 Feb 2018 11:35:09 CET</pubDate>
-      
-      <guid>https://mattische.github.io/blog/tags/vagrant/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Virtual Box</title>
-      <link>https://mattische.github.io/blog/tags/virtual-box/</link>
-      <pubDate>Tue, 21 Nov 2017 10:12:07 CET</pubDate>
-      
-      <guid>https://mattische.github.io/blog/tags/virtual-box/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Web Development</title>
-      <link>https://mattische.github.io/blog/tags/web-development/</link>
-      <pubDate>Mon, 27 Nov 2017 13:44:13 CET</pubDate>
-      
-      <guid>https://mattische.github.io/blog/tags/web-development/</guid>
       <description></description>
     </item>
     
