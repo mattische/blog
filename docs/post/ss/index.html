@@ -57,13 +57,14 @@
 <p>ss is a wonderful tool to monitor/vew connections on and to your machine (server).</p>
 
 <p>Just running <code>ss</code> shows all connections. You may filter it by socket type (tcp, udp, unix, raw etc) and on each connections state.
-To show current listening sockets use <code>$ ss -l</code></p>
+To show current listening sockets use
+<code>$ ss -l</code></p>
 
 <p><br></p>
 
 <p>If you use ss with <code>watch</code> you&rsquo;ll get a real time updated list of connections.</p>
 
-<p>For exampel, here we show only tcp-connections (the -t switch) that are currently connected (state connected);</p>
+<p>For exampel, here we show only Ipv4 tcp-connections (the -t4 switch) that are currently connected (state connected);</p>
 
 <p><code>
 $ watch -n 1 &ldquo;ss -r -t4 state connected&rdquo;
