@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ss - mattische/blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <link rel="canonical" href="https://mattische.github.io/blog/post/ss/">
+
+  
+  
+
+  
+  
+
+  
+  
+
+  <link rel="stylesheet" type="text/css" href="https://mattische.github.io/blog//css/combined-min.css">
+
+</head>
+<body class="">
+
+<div class="site-wrap">
+  <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="https://mattische.github.io/blog/" class="site-title">mattische/blog</a>
+      <nav class="site-nav right">
+      <a href="https://mattische.github.io/blog//about/">About</a>
+<a href="https://mattische.github.io/blog//tags/">Tags</a>
+<a href="https://mattische.github.io/blog//contact/">Contact</a>
+</form>
+
+      </nav>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</header>
+
+  <div class="post p2 p-responsive wrap" role="main">
+    <div class="measure">
+      <div class="post-header mb2">
+        <h1 class="py2">ss</h1>
+        <span class="post-meta">Apr 9, 2018 by mattische</span><br>
+        
+      </div>
+
+      <article class="post-content">
+      
+
+<h3 id="ss">ss</h3>
+
+<p>ss is a wonderful tool to monitor/vew connections on and to your machine (server).</p>
+
+<p>Just running <code>ss</code> shows all connections. You may filter it by socket type (tcp, udp, unix, raw etc) and on each connections state.
+To show current listening sockets use <code>$ ss -l</code></p>
+
+<p><br></p>
+
+<p>If you use ss with <code>watch</code> you&rsquo;ll get a real time updated list of connections.</p>
+
+<p>For exampel, here we show only tcp-connections (the -t switch) that are currently connected (state connected);</p>
+
+<p><code>
+$ watch -n 1 &ldquo;ss -r -t4 state connected&rdquo;
+</code></p>
+
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br></p>
+
+<p>reference:</p>
+
+<p><a href="https://www.ghacks.net/2018/04/07/using-ss-to-monitor-connections-in-gnu-linux-for-new-users/">ghacks.net</a></p>
+
+      </article>
+
+      <p class="post-meta">Tags:&nbsp;
+        
+            
+            <a href="https://mattische.github.io/blog//tags/ss">ss</a>
+        
+            ,&nbsp;
+            <a href="https://mattische.github.io/blog//tags/network">network</a>
+        
+            ,&nbsp;
+            <a href="https://mattische.github.io/blog//tags/terminal">terminal</a>
+        
+      </p>
+
+      
+
+    </div>
+  </div>
+</div>
+    <footer class="footer">
+      <div class="p2 wrap">
+        <div class="measure mt1 center">
+      <nav class="social-icons icons">
+<a class="fa fa-rss rss" href="/index.xml"></a>
+
+<a class="fa fa-twitter twitter" href="https://twitter.com/mattische"></a>
+
+</nav>
+
+          <small>
+            Copyright &#169; 2017<br>
+            Powered by <a href="http://gohugo.io/" target="_blank">Hugo</a> &amp; <a href="https://github.com/azmelanar/hugo-theme-pixyll" target="_blank">Pixyll</a>
+          </small>
+        </div>
+      </div>
+    </footer>
+
+    
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+
+
+</body>
+</html>
+

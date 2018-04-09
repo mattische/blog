@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Network on mattische/blog </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://mattische.github.io/blog/tags/network/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Mon, 09 Apr 2018 15:34:33 CEST</updated>
+    
+    <item>
+      <title>ss</title>
+      <link>https://mattische.github.io/blog/post/ss/</link>
+      <pubDate>Mon, 09 Apr 2018 15:34:33 CEST</pubDate>
+      
+      <guid>https://mattische.github.io/blog/post/ss/</guid>
+      <description>ss ss is a wonderful tool to monitor/vew connections on and to your machine (server).
+Just running ss shows all connections. You may filter it by socket type (tcp, udp, unix, raw etc) and on each connections state. To show current listening sockets use $ ss -l
+
+If you use ss with watch you&amp;rsquo;ll get a real time updated list of connections.
+For exampel, here we show only tcp-connections (the -t switch) that are currently connected (state connected);</description>
+    </item>
+    
+  </channel>
+</rss>
+
